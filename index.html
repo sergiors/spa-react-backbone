@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Single Page Application with React</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#">Index</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div id="bootstrap">Please, wait...</div>
+
+    <script src="bower_components/react/JSXTransformer.js"></script>    
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    
+    <script src="scripts/components/index.js" type="text/jsx"></script>
+    <script src="scripts/components/about.js" type="text/jsx"></script>
+    <script src="scripts/components/contact.js" type="text/jsx"></script>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/bootstrap.js" type="text/jsx"></script>
+</body>
+
+</html>
