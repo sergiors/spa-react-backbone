@@ -19,11 +19,7 @@ var App = App || {};
         },
 
         render: function() {
-            return (
-                React.createElement('div', null,
-                    React.createElement(this.state.current, null)
-                )
-            );
+            return React.createElement(this.state.current, null);
         }
     });
 
