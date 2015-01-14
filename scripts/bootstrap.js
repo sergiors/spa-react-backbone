@@ -1,3 +1,4 @@
+
 var App = App || {};
 
 (function() {
@@ -16,6 +17,10 @@ var App = App || {};
             Backbone.Events.on('change:component', function(component) {
                 this.setState({current: component});
             }.bind(this));
+        },
+
+        componentWillUnmount: function() {
+            Backbone.Events.off('change:component');
         },
 
         render: function() {

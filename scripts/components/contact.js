@@ -4,7 +4,34 @@ var App = App || {};
     'use strict';
 
     var Contact = React.createClass({
+        getInitialState: function() {
+            return {
+                name: null
+            };
+        },
+        
+        handleSubmit: function(e) {
+            e.preventDefault();
+            var name = this.refs.name.getDOMNode();
+
+            if (!name.value) {
+                return;
+            }
+            
+            this.setState({name: name.value});
+            
+            name.value = '';
+        },
+        
+        renderName: function() {
+            if (!this.state.name) return;
+            
+            return 'Your name is ' + this.state.name;
+        },
+        
         render: function() {
+            var yourName = this.renderName();
+        
             return (
                 <div>
                     <h1>Contact</h1>
@@ -15,19 +42,9 @@ var App = App || {};
                         </label>
                         <button type="submit">send</button>
                     </form>
+                    {yourName}
                 </div>
             );
-        },
-
-        handleSubmit: function(e) {
-            e.preventDefault();
-            var name = this.refs.name.getDOMNode();
-
-            if (!name.value) {
-                return;
-            }
-            console.log('your name is', name.value)
-            name.value = '';
         }
     });
 
